@@ -1,0 +1,24 @@
+	<table width = '100%' align = 'center' frame = 'border'>
+		<tr>
+			<td><?=$_SESSION ['lang']['author']?><a href = 'index.php?profile=<?=$msg_arr['user_id']?>'><?=$msg_arr ['user']?></a></td>
+		</tr>
+		<tr>
+			<td><?=$_SESSION ['lang']['title']?><?=$msg_arr ['title']?></td>
+		</tr>
+		<tr>
+			<td width='50px'><?=$_SESSION ['lang']['msg']?><p><?=$msg_arr ['msg']?></p></td>
+		</tr>
+		<tr>
+			<td><p><?=$_SESSION ['lang']['crt_date']?><?=date ("d-m-Y H:i:s", $msg_arr ['time'])?></p></td>
+		</tr>
+		<?php
+		if (isset ($_SESSION['id'])){
+			echo '<tr><td align = "right"><a href = index.php?edit=' . $msg_arr ["id"] . '>' . $_SESSION ['lang']['edit'] . '</a></td></tr>';
+			echo '<tr><td align = "right"><a href = "index.php?del=' . $msg_arr ["id"] . '" onclick="return confirm (Ви дійсно хочете видалити це повідомлення?)">' . $_SESSION ['lang']['delete'] . '</a></td></tr>';
+			//echo '<tr><td align = "right"><input type="submit" name="del" value="Удалить" onclick="if(confirm(\'Бажаэте видалити?\'))submit();else return false;"></td></tr>';
+		}
+		?>
+		<tr>
+			<td><a href = 'index.php'><?=$_SESSION ['lang']['back']?></a></td>
+		</tr>
+	</table>

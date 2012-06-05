@@ -1,0 +1,47 @@
+<body>
+	<form enctype = 'multipart/form-data' action="conf.php" method = 'post'>
+		<table>
+			<tr>
+				<td><?=$_SESSION ['lang']['user_info']?><?=$arr ['login']?>.</td>
+			</tr>
+			<tr>
+				<td><?=$_SESSION ['lang']['name']?><?=$arr['name']?></td>
+			</tr>
+			<?php
+				if ($arr['soname'] != ''){
+				echo '<tr><td> ' . $_SESSION ['lang']['last_name'] . $arr['last_name'] . '</td></tr>';
+			}
+			?>
+			<tr>
+				<td><a><?=$_SESSION ['lang']['email']?><?=$arr['email']?></a></td>
+			</tr>
+			 <?php
+			if ($arr ['last_visit'] != 0){
+				echo '<tr><td>Дата останньго візиту: ' . date ("d-m-Y H:i:s", $arr ['last_visit'] . '</td></tr>');
+			}
+			?>
+			<tr>
+				<td><?=$_SESSION ['lang']['regg_date']?><?=date ("d-m-Y H:i:s", $arr ['regtime'])?><hr></td>
+			</tr>	
+			<?php
+			if ($arr ['id'] == $_SESSION ['id']){
+				echo "<tr><td>" . $_SESSION ['lang']['avatar'] . "</td></tr>";
+				echo "<tr><td>" . $_SESSION ['lang']['avatar_size'] . "</td></tr>";
+				echo "<td><input name = 'img' type = 'file' ><input name=doUpload type = 'submit' value ='" . $_SESSION ['lang']['avatar_upload'] . "'" . "></td>";
+				echo '<tr><td><hr><a href = index.php?edit_profile=' . $arr['id'] .  '>Редагувати профіль</a></td></tr>';
+			}
+			?>
+			<tr>
+				<td><a href = 'index.php'><?=$_SESSION ['lang']['back']?></a></td>
+			</tr>
+			<img align = "right" src= <?php
+				$av_img = avatar_p($arr ['id']);
+				if (file_exists($av_img)){
+					echo $av_img;
+				}else{
+				echo 'img/img.gif';
+				}
+			?>>
+		</table>
+	</form>
+</body>

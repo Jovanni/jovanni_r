@@ -1,0 +1,20 @@
+	<form action = 'conf.php' method = 'post'>
+	<table width = '100%' align = 'center' frame = 'border'>
+		<tr>
+			<td><?=$_SESSION ['lang']['author']?><a href = 'index.php?profile=<?=$msg_arr['user_id']?>'><?=$msg_arr ['user']?></a></td>
+		</tr>
+		<tr>
+			<td><p><?=$_SESSION ['lang']['title']?></p><textarea name = 'edit_title'><?=$msg_arr ['title']?></textarea></td>
+		</tr>
+		<tr>
+			<td width='50px'><?=$_SESSION ['lang']['msg']?><p><textarea rows = '10' cols = '35' name = 'edit_msg'><?=$msg_arr ['msg']?></textarea></p></td>
+		</tr>
+		<input name = 'edit_id' type = 'text' hidden='true' value = ' <?=$msg_arr ["id"]?> '>
+		<tr>
+			<td><input type = 'submit' value = <?=$_SESSION ['lang']['save_edit']?>></td>
+		</tr>
+		<tr>
+			<td><a href = 'index.php'><?=$_SESSION ['lang']['back']?></a></td>
+		</tr>
+	</table>
+	</form>

@@ -1,0 +1,19 @@
+<body>
+<form action = "conf.php" method = "post">
+<table>
+<tr>
+	<td><?=$_SESSION ['lang']['you_entered']?><?=$_SESSION ['login']?>.</td>
+</tr>
+<tr>
+	<td><p><a href = 'index.php?add_news'><?=$_SESSION ['lang']['add_news']?></a></p></td>
+</tr>
+<tr>
+	<td><p><a href = 'index.php?profile=<?=$_SESSION['id']?>'><?=$_SESSION ['lang']['profile']?></a></p></td>
+</tr>
+<tr>
+	<td><a href = 'conf.php?exit'><?=$_SESSION ['lang']['exit']?></a></td>
+</tr>
+
+</table>
+</form>
+</body>

@@ -1,0 +1,18 @@
+<form action = "conf.php" method = 'post'>
+	<table align = 'center' frame = 'border'>
+		<tr>
+			<td><?=$_SESSION ['lang']['title']?></td>
+			<td><input type = 'text' name = 'title'></td>
+		</tr>
+		<tr>
+			<td><?=$_SESSION ['lang']['msg']?></td>
+			<td><textarea name = 'msg' rows = '10' cols = '35'></textarea></td>
+		</tr>
+		<tr>
+			<td><p><input type = 'submit' value = '<?=$_SESSION ['lang']['add_news']?>'></p></td>
+		</tr>
+		<tr>
+			<td><a href = 'index.php'><?=$_SESSION ['lang']['back']?></a></td>
+		</tr>
+	</table>
+</form>

@@ -1,0 +1,26 @@
+<body>
+	<table width = '100%' align = 'center' frame = 'border'>
+		<tr>
+			<td><?=$_SESSION ['lang']['author']?><a href = 'index.php?profile=<?=$row['user_id']?>'><?=$row ['user']?></a></td>
+		</tr>
+		<tr>
+			<td><p><?=$_SESSION ['lang']['title']?><a href = 'index.php?readmsg=<?=$row['id']?>'><?=$row ['title']?></a></p></td>
+		</tr>
+		<tr>
+			<td><?php
+			$text = $row['msg'];
+			if (strlen($text)>300){
+				$text = substr ($text, 0,strpos ($row['msg'], " ", 300));
+				echo $text . '...';
+			}else
+			echo $text;
+			?></td>
+		</tr>
+		<tr>
+			<td><p><?=$_SESSION ['lang']['crt_date']?><?=date ("d-m-Y H:i:s", $row ['time'])?></p></td>
+		</tr>
+		<tr>
+			<td align = 'right'><a href = 'index.php?readmsg=<?=$row['id']?>'><?=$_SESSION ['lang']['detailed']?></a></td>
+		</tr>
+	</table>
+</body>

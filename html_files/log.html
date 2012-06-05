@@ -1,0 +1,23 @@
+<body>
+<form action = "conf.php" method = "post">
+<table>
+<tr>
+	<td><?=$_SESSION ['lang']['authorizing']?></td>
+</tr>
+<tr>
+	<td><?=$_SESSION ['lang']['login']?></td>
+	<td><input type = 'text' name = "login"></td>
+</tr>
+<tr>
+	<td><?=$_SESSION ['lang']['pass']?></td>
+	<td><input type = 'password' name = "password"></td>
+</tr>
+<tr>
+	<td><input type = 'submit' value = '<?=$_SESSION ['lang']['enter']?>'></td>
+</tr>
+<tr>
+	<td><a href = 'index.php?registration'><?=$_SESSION ['lang']['reg']?></a></td>
+</tr>
+</table>
+</form>
+</body>

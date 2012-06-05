@@ -1,0 +1,20 @@
+<table width="100%">
+	<tr>
+		<td>
+			<form align = 'right' action = 'index.php' method = 'post'>
+				<select name = 'lang'>
+					<option value = 'Ua' <?=$_SESSION ['sel_ua']?>>Ua</option>
+					<option value = 'Ru' <?=$_SESSION ['sel_ru']?>>Ru</option>
+					<option value = 'Eng' <?=$_SESSION ['sel_eng']?>>Eng</option>
+				</select>
+				<input type = 'submit' value = '<?=$_SESSION ['lang']['change_lang']?>'>
+			</form>
+		</td>
+	</tr>
+	<tr>
+		<td align="center"><h1><?=$_SESSION ['lang']['site']?></h1></td>
+	</tr>
+	<tr>
+		<td><?=$_SESSION ['lang']['reg_users']?><?=reg_users ()?>.</td>
+	</tr>
+</table>

@@ -1,0 +1,20 @@
+<form action = 'conf.php' method = 'post'>
+	<table width = '100%' align = 'center' frame = 'border'>
+		<tr>
+			<td><?=$_SESSION ['lang']['user_info']?><?=$prof_arr['login']?>.</td>
+		</tr>
+		<tr>
+			<td><p>Ім'я</p><textarea name = 'name'><?=$prof_arr['name']?></textarea></td>
+		</tr>
+		<tr>
+			<td>Прізвище <p><textarea name = 'soname'><?=$prof_arr['last_name']?></textarea></p></td>
+		</tr>
+			<input name = 'user_id' type = 'text' hidden='true' value = ' <?=$prof_arr['id']?> '>
+		<tr>
+			<td><input name = 'edit_prof' type = 'submit' value = <?=$_SESSION ['lang']['save_edit']?>></td>
+		</tr>
+		<tr>
+			<td><a href = 'index.php'><?=$_SESSION ['lang']['back']?></a></td>
+		</tr>
+	</table>
+</form>
